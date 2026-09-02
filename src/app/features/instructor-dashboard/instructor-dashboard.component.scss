@@ -28,6 +28,15 @@
     transition: background-color 0.2s;
   }
 
+  .btn-grade-nav {
+    background-color: #0284c7;
+    color: white;
+
+    &:hover {
+      background-color: #0369a1;
+    }
+  }
+
   .btn-grid-nav {
     background-color: #4f46e5;
     color: white;
