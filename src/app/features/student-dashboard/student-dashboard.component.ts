@@ -4,6 +4,7 @@ import { RouterLink } from "@angular/router";
 import { CourseCardComponent } from "../../ui/course-card/course-card.component";
 import { Course } from "../../models/course.model";
 import { CourseService } from "../../services/course.service";
+import { EnrollmentStore } from "../../store/enrollment.store";
 
 @Component({
   selector: "app-student-dashboard",
@@ -13,9 +14,8 @@ import { CourseService } from "../../services/course.service";
   styleUrl: "./student-dashboard.component.scss",
 })
 export class StudentDashboardComponent {
-  // inject(CourseService) requests the service created in Exercise 6.
-  // Angular finds the singleton instance and gives it to us.
   private api = inject(CourseService);
+  readonly enrollmentStore = inject(EnrollmentStore);
 
   studentName = signal("Liya Kebede");
   earnedCredits = signal(45);
@@ -29,12 +29,6 @@ export class StudentDashboardComponent {
 
   selectedCourse = signal<Course | null>(null);
 
-  // rxResource wraps the HTTP call into three managed signals:
-  // - coursesResource.isLoading() -> true while waiting for the server response
-  // - coursesResource.error()     -> the error object if the request fails
-  // - coursesResource.value()     -> the Course[] array when the request succeeds
-  //
-  // It handles subscribing (starting the request) and unsubscribing (cleaning up) automatically.
   coursesResource = rxResource({
     stream: () => this.api.getAll(),
   });

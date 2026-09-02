@@ -2,11 +2,15 @@
   <h1>Welcome, {{ studentName() }}</h1>
   <p>Credits Earned: {{ earnedCredits() }}</p>
   <p>Graduation Status: {{ graduationStatus() }}</p>
+  <div class="store-summary">
+    Pending Enrollments: <strong>{{ enrollmentStore.pendingCount() }}</strong>
+  </div>
   <div class="actions">
     <button (click)="registerForClass()">
       Register for a Class (+3 credits)
     </button>
     <a routerLink="/enroll" class="btn-enroll-nav">Go to Enrollment Form</a>
+    <a routerLink="/enrollments" class="btn-queue-nav">View Enrollment Queue (SignalStore)</a>
   </div>
 </div>
 
