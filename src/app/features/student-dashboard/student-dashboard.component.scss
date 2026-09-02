@@ -1,0 +1,58 @@
+.dashboard {
+  margin-bottom: 2rem;
+
+  .actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 1rem;
+  }
+}
+
+.btn-enroll-nav {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #059669;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+
+  &:hover {
+    background-color: #047857;
+  }
+}
+
+.spinner {
+  padding: 2rem;
+  background: #f1f5f9;
+  border-radius: 8px;
+  color: #475569;
+  text-align: center;
+  font-weight: 500;
+}
+
+.error {
+  padding: 1.5rem;
+  background-color: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-block: 1rem 2rem;
+}
+
+.selection-hint {
+  padding: 0.75rem 1rem;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 6px;
+  color: #1e40af;
+  margin-top: 1.5rem;
+}
