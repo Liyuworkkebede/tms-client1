@@ -9,6 +9,13 @@ export const routes: Routes = [
       ),
   },
   {
+    path: "grade-submission",
+    loadComponent: () =>
+      import("./features/grade-submission/grade-submission.component").then(
+        (m) => m.GradeSubmissionComponent,
+      ),
+  },
+  {
     path: "student-dashboard",
     loadComponent: () =>
       import("./features/student-dashboard/student-dashboard.component").then(
