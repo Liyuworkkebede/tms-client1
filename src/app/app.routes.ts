@@ -1,4 +1,5 @@
 import { Routes } from "@angular/router";
+import { roleGuard } from "./guards/role.guard";
 
 export const routes: Routes = [
   {
@@ -14,6 +15,7 @@ export const routes: Routes = [
       import("./features/grade-submission/grade-submission.component").then(
         (m) => m.GradeSubmissionComponent,
       ),
+    canActivate: [roleGuard("Instructor")],
   },
   {
     path: "student-dashboard",
@@ -41,6 +43,13 @@ export const routes: Routes = [
     loadComponent: () =>
       import("./features/enrollment-form/enrollment-form.component").then(
         (m) => m.EnrollmentFormComponent,
+      ),
+  },
+  {
+    path: "unauthorized",
+    loadComponent: () =>
+      import("./features/unauthorized/unauthorized.component").then(
+        (m) => m.UnauthorizedComponent,
       ),
   },
   {
